@@ -1,0 +1,32 @@
+{
+  "name": "matin",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "15.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "@supabase/supabase-js": "^2.44.4",
+    "@supabase/ssr": "^0.5.0",
+    "tailwindcss": "3.3.3",
+    "postcss": "8.4.31",
+    "autoprefixer": "10.4.16",
+    "clsx": "2.1.0",
+    "@radix-ui/react-accordion": "^1.2.0",
+    "lucide-react": "0.424.0",
+    "dayjs": "1.11.9"
+  },
+  "devDependencies": {
+    "typescript": "5.2.2",
+    "@types/react": "18.2.33",
+    "@types/node": "20.8.9",
+    "eslint": "9.35.0",
+    "eslint-config-next": "15.0.0"
+  }
+}
