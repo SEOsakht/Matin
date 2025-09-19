@@ -1,10 +1,9 @@
 import LoginButton from '@/components/LoginButton'
 import AnchorRenderer from '@/components/AnchorRenderer'
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
+import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
-
 export default async function Page() {
-  const supabase = createServerComponentClient({ cookies })
+  const supabase = createServerClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!, { cookies: cookies() })
   const { data: { session } } = await supabase.auth.getSession()
   const sampleText = `متن اصلی قبل از انکور.\\این متن داخل انکور اول است/// ادامهٔ متن.\\این یک انکور دوم/// پایان.`
   return (

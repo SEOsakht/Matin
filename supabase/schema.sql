@@ -1,4 +1,5 @@
 -- Supabase schema for Matin (Alpha)
+create extension if not exists pgcrypto;
 create table if not exists matin_users (
   id uuid primary key default gen_random_uuid(),
   supabase_id text not null unique,
@@ -6,13 +7,11 @@ create table if not exists matin_users (
   is_admin boolean not null default false,
   created_at timestamptz default now()
 );
-
 create table if not exists anchors (
-  anchor_id text primary key,
+  anchor_id text primary key, -- 12-digit timestamp like YYMMDDHHMMSS
   content text not null,
   created_at timestamptz default now()
 );
-
 create table if not exists annotations (
   id uuid primary key default gen_random_uuid(),
   anchor_id text references anchors(anchor_id) on delete cascade,
@@ -23,7 +22,6 @@ create table if not exists annotations (
   like_count int default 0,
   created_at timestamptz default now()
 );
-
 create table if not exists annotation_likes (
   id uuid primary key default gen_random_uuid(),
   annotation_id uuid references annotations(id) on delete cascade,
