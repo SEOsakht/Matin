@@ -1,4 +1,4 @@
-import '../globals.css'
+import '../styles/globals.css'
 export const metadata = { title: 'متین — Alpha', description: 'Matin — Persian inline annotation app (alpha)' }
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
