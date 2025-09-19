@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { supabase } from '@/lib/supabaseClient'
+import { supabase } from '../lib/supabaseClient'
 import dayjs from 'dayjs'
 export default function AnchorAccordion({ anchorId }: { anchorId: string }) {
   const [open, setOpen] = useState(false)
