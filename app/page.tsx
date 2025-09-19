@@ -1,5 +1,5 @@
-import LoginButton from '@/components/LoginButton'
-import AnchorRenderer from '@/components/AnchorRenderer'
+import LoginButton from '../components/LoginButton'
+import AnchorRenderer from '../components/AnchorRenderer'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
 
